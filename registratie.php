@@ -53,7 +53,7 @@ password = :password");
         
         <fieldset class="fieldset_one">
             
-            <legend>Welcome to spotify</legend>
+            <legend>Pinterst</legend>
             <div>
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username">
