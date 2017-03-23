@@ -26,7 +26,7 @@ if(!empty($_POST)) {
         }
 
 // invoeren query
-    $query = "insert into users (email, password) values ('".$email."','".$password."') ";
+    $query = "insert into users (firstname, lastname, username, email, password) values ('".$firstname."','".$lastname."','".$username."','".$email."','".$password."') ";
     $statement = $pdoconn->prepare("SELECT * from users where username = :username and
 password = :password");
 
