@@ -27,11 +27,14 @@ if(!empty($_POST)) {
 
 // invoeren query
     $query = "insert into users (firstname, lastname, username, email, password) values ('".$firstname."','".$lastname."','".$username."','".$email."','".$password."') ";
-    $statement = $pdoconn->prepare("SELECT * from users where username = :username and
+    $statement = $pdoconn->prepare("SELECT * from users where firstname = :firstname and lastname= :lastname and username = :username and email = :email and
 password = :password");
 
     $statement->bindParam(':email', $email);
     $statement->bindParam(':password', $password);
+    $statement->bindParam(':firstname', $firstname);
+    $statement->bindParam(':lastname', $lastname);
+    $statement->bindParam(':username', $username);
     $statement->execute();
     $res = $pdoconn->query($query);
 
