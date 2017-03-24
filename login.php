@@ -2,10 +2,10 @@
 
 if(!empty($_POST)){
 
-//connectie database
+
     try
     {
-        $dbh = new PDO('mysql:host=localhost; dbname=spotify_faker', 'root', '');
+        $dbh = new PDO('mysql:host=localhost; dbname=phpopdracht', 'root', '');
     }
     catch(PDOException $e)
     {
@@ -14,8 +14,8 @@ if(!empty($_POST)){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-// invoegen query
-    $sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
+
+    $sql = "SELECT * FROM gebruikers WHERE email = :email LIMIT 1";
     $query = $dbh->prepare( $sql );
     $query->execute( array( ':email'=>$email ) );
     $results = $query->fetchAll( PDO::FETCH_ASSOC );
@@ -24,7 +24,7 @@ if(!empty($_POST)){
         if(password_verify($password, $row['password'])){
             session_start();
             $_SESSION['email'] = $email;
-            header('Location: artiest.php');
+            header('Location: homepage.php');
         }
         else
         {
