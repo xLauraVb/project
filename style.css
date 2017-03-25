@@ -1,11 +1,13 @@
 body
-    {
-    font-family: 'Dosis', sans-serif;
-    background-color:white;
-    font-size: 18px;
-    }
+{
+    font-family: Helvetica;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/seigaiha.png");
+}
 
-header{
+
+
+
+/*header{
 	width:100%; 
 	background:white; 
 	height:60px; 
@@ -29,3 +31,117 @@ header h1
     background-color: bisque;    
 }
 
+{
+  box-sizing: border-box;
+}
+
+
+
+form
+{
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    margin: auto;
+    width: 530px;
+    height: 200px;
+    border-radius: 8px;
+    border: 3px solid grey;
+    box-sizing: content-box;
+}
+
+fieldset
+{
+    border: none;
+    margin-top: 1em;
+}
+
+legend
+{
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    color: white;
+    font-weight: bold;
+}
+
+div
+{
+    float: left;
+    width: 100%;
+}
+
+
+
+label
+{
+    width: 100%;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    padding-left: 7.5%;
+}
+
+
+
+input[type=text], input[type=password]
+{
+    width: 70%;
+    background-color: transparent;
+    color: #626262;
+    padding: 0.5em 0 1em 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+    margin: 0.5em 5% 0.25em 5%;
+    border: 0;
+    border-bottom: 2px solid #626262;
+    border-top: 2px solid #626262;
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+
+
+
+button
+{
+    display: block;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 28em;
+    margin-bottom: 1em;
+    background-color: lightcyan;
+    color: grey;
+    padding: 0.5em 1.5em;
+    border: 2px solid grey;
+    font-size: 1em;
+    width: 50%;
+}
+    
+    
+    #submit
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    background-color: lightcyan;
+    color: grey;
+    padding: 0.5em 1.5em;
+    border: 2px solid grey;
+    font-size: 1em;
+    width: 50%;
+}
+
+button:hover
+{
+    cursor: pointer;
+}
+
+.feedback
+{
+  width: 100%;
+  text-align: center;
+  color: #D6391D;
+  font-weight: bold;
+}
+*/

@@ -33,8 +33,18 @@ if(!empty($_POST)){
 
 ?>
        
-
-       <form action="" method="post">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registreer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+    
+    <form action="" method="post">
         
         <fieldset class="fieldset_one">
             
@@ -63,10 +73,16 @@ if(!empty($_POST)){
         </fieldset>
         
         
-        <button type="submit" >Registreer</button>
-        <a href="login.php"><button>Login</button></a>
+        <button type="submit" method="post">Registreer</button>
+        <a href="login.php" ><button type="submit">Login</button></a>
   
         <div class="feedback"></div>
         
     </form>
+    
+    
+    
+</body>
+</html>
+       
     
