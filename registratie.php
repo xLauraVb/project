@@ -1,56 +1,35 @@
 <?php
 
-if(!empty($_POST)) {
-// check of velden ingevuld zijn
-    $firstname = $_POST["firstname"];
-    $lastname = $_POST["lastname"];
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
 
-    $options = [
+include_once ("user.classe.php");
+
+
+if(!empty($_POST)){
+    try{
+        $Gebruiker1 = new Gebruiker();
+        $Gebruiker1->Firstname = $_POST["firstname"];
+        $Gebruiker1->Lastname = $_POST["lastname"];
+        $Gebruiker1->Username = $_POST["username"];
+        $Gebruiker1->Password = $_POST["password"];
+        $Gebruiker1->Email = $_POST["email"];
+        $Gebruiker1->Save();
+
+        
+            $options = [
         'cost' =>12,
-
-    ];
+                
+                 ];
 
     $password = password_hash($password, PASSWORD_DEFAULT, $options);
 
-//connectie maken met database
-        try
-        {
-            $pdoconn = new PDO('mysql:host=localhost; dbname=phpopdracht', 'root', '');
-        }
-        catch(PDOException $e)
-        {
-
-        }
-
-// invoeren query
-    $query = "insert into gebruikers (firstname, lastname, username, email, password) values ('".$firstname."','".$lastname."','".$username."','".$email."','".$password."') ";
-    $statement = $pdoconn->prepare("SELECT * from users where firstname = :firstname and lastname= :lastname and username = :username and email = :email and
-password = :password");
-
-    $statement->bindParam(':email', $email);
-    $statement->bindParam(':password', $password);
-    $statement->bindParam(':firstname', $firstname);
-    $statement->bindParam(':lastname', $lastname);
-    $statement->bindParam(':username', $username);
-    $statement->execute();
-    $res = $pdoconn->query($query);
-
-    if ($res != false) {
-
-
-        session_start();
-        $_SESSION['email'] = $email;
-        header('Location: login.php');
-
-    } else {
-
-        header('Location: registratie.php');
-
+        
+    }
+    catch (Exception $e){
+        $error= $e->getMessage();
     }
 }
+
+
 
 ?>
        
