@@ -24,7 +24,7 @@ if(!empty($_POST)){
         if(password_verify($password, $row['password'])){
             session_start();
             $_SESSION['email'] = $email;
-            header('Location: artiest.php');
+            header('Location: homepage.php');
         }
         else
         {
