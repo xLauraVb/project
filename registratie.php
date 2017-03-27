@@ -15,14 +15,6 @@ if(!empty($_POST)){
         $Gebruiker1->Save();
 
         
-            $options = [
-        'cost' =>12,
-                
-                 ];
-
-    $password = password_hash($password, PASSWORD_DEFAULT, $options);
-
-        
     }
     catch (Exception $e){
         $error= $e->getMessage();
@@ -31,58 +23,61 @@ if(!empty($_POST)){
 
 
 
-?>
-       
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registreer</title>
+    <title>login</title>
+    <!--<link rel="stylesheet" href="resetcss.css">-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    
-    
-    <form action="" method="post">
-        
-        <fieldset class="fieldset_one">
-            
-            <legend>Pinterst</legend>
-            <div>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username">
-            </div>
-            <div>
-                <label for="firstname">firstname</label>
-                <input type="text" name="firstname" id="firstname">
-            </div>
-            <div>
-                <label for="lastname">lastname</label>
-                <input type="text" name="lastname" id="lastname">
-            </div>
-            <div>
-                <label for="email">email</label>
-                <input type="text" name="email" id="email">
-            </div>
-            
-            <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-            </div>
-        </fieldset>
-        
-        
-        <button type="submit" method="post">Registreer</button>
-        <a href="login.php" ><button type="submit">Login</button></a>
   
-        <div class="feedback"></div>
-        
-    </form>
+   <header>
+   <nav>
+       <ul class="login"><a href="login.php">Login</a></ul>
+   </nav>
+   </header>
+   
+   
+<div class="box">
+    <h1>Registreren</h1>
     
-    
+<form action="" method="post">
+
+  <div class="form-group">
+    <label for="firstname">First name</label>
+    <input name="firstname" id="password" type="text" />
+  </div>
+   
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input name="lastname" id="password" type="text" />
+  </div>
+  
+    <div class="form-group">
+    <label for="username">Username</label>
+    <input name="username" id="password" type="text" />
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input name="email" id="password" type="email" />
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input name="password" id="password" type="password" />
+  </div>
+  
+  
+  <div class="form-group">
+  <button class="btn" type="submit">Registreren</button>
+    </div>
+  <div class="clearfix"></div>
+</form>
+</div>
+
     
 </body>
 </html>
-       
-    
