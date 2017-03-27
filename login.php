@@ -2,20 +2,22 @@
 
 if(!empty($_POST)){
 
-//connectie database
+
     try
     {
-        $dbh = new PDO('mysql:host=localhost; dbname=pinterest', 'root', '');
+        $dbh = new PDO('mysql:host=localhost; dbname=phpopdracht', 'root', '');
     }
     catch(PDOException $e)
     {
 
     }
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
 
-// invoegen query
-    $sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
+
+    
+    
+    $sql = "SELECT * FROM gebruikers WHERE email = :email LIMIT 1";
     $query = $dbh->prepare( $sql );
     $query->execute( array( ':email'=>$email ) );
     $results = $query->fetchAll( PDO::FETCH_ASSOC );
@@ -35,41 +37,43 @@ if(!empty($_POST)){
 }
 
 
-?><!doctype html>
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
-    <title>PHPinterest login</title>
 </head>
 <body>
-<section>
-    <h1>login to PHPinterest</h1>
-    <!--<form method="post" name="loggin" action="#" id="loggin">
-            <input id="email" name="email" type="text" placeholder="email">
-            <input id="password" name="password" type="password" placeholder="Password">
-            <input id="submit" type="submit" name='submit' value="sign in" />
-    </form>-->
-    
-    <fieldset class="fieldset_one">
+
+ <header>
+     <nav>
+       <ul class="login"><a href="registratie.php">Registreren</a></ul>
+   </nav>
+ </header>
+  
+   <div class="box">
+    <form class="form-group" action="" method="post">
             
-            <legend>PHPinterst</legend>
+            <!--<legend>Pinterst</legend>-->
             <div>
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email">
+                <input type="email" name="email" id="password">
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="text" name="password" id="password">
+                <input type="password" name="password" id="password">
             </div>
-            <input id="submit" method="post" type="submit" name='submit' value="Login" />
-            
-        </fieldset>
-</section>
+        
+        
+        <button class="btn" type="submit" >Login</button>
+        
+        <div class="clearfix"></div>
+        
+    </form>
+    </div>
 
+    
 </body>
 </html>
