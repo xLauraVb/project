@@ -32,6 +32,11 @@
    <h1>Profiel bewerken</h1>
   </div>
   
+        <form method="post"> 
+    Username: <input type="text" name="nickname"><br />
+    Password: <input type="password" name="password"><br />
+    <input type="submit" value="Submit">
+</form>
   
 
     
