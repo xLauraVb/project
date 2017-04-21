@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <title>IMDterest</title>
-    <link rel="stylesheet" href="style_homepage.css">
+    <link rel="stylesheet" href="css/style_homepage.css">
 </head>
 <body>
    

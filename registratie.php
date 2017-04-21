@@ -45,7 +45,7 @@ if(!empty($_POST)) {
     <meta charset="UTF-8">
     <title>login</title>
     <!--<link rel="stylesheet" href="resetcss.css">-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   
