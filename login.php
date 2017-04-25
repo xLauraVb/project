@@ -59,11 +59,11 @@ if(!empty($_POST)){
             <!--<legend>Pinterst</legend>-->
             <div>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="password">
+                <input type="email" required name="email" id="password">
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password">
+                <input type="password" required name="password" id="password">
             </div>
         
         
